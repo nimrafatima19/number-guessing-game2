@@ -15,11 +15,10 @@
     Generate button
  -->
 
-<div id="section1" class="container text-center mt-5">
-    <button class="btn btn-warning btn-lg"
-     onclick ="generate_number_btn_click()">Generate Number</button>
+    <div id="section1" class="container text-center mt-5">
+        <button class="btn btn-warning btn-lg" onclick="generate_number_btn_click()">Generate Number</button>
 
-</div>
+    </div>
 
 
     <!-- Section 2
@@ -30,31 +29,35 @@ input field
 check
  -->
 
- <div id="section2" class="container">
+    <div id="section2" class="container">
 
-    <div class="row mt-5">
-        <div class="col-12 text-center">
-            <!-- image -->
-            <img class="img_size"src ="images/dice.gif" alt="">
-            
+        <div class="row mt-5">
+            <div class="col-12 text-center">
+                <!-- image -->
+                <img class="img_size" src="images/dice.gif" alt="">
 
-            <p class="text-danger">
-                Guess the number between 1 to 6**
-            </p>
 
-            <div class="form-group w-25 mx-auto">
-                <input 
-                id="field"
-                type="text" placeholder="Enter Here" class="form-control"/>
+                <p class="text-danger">
+                    Guess the number between 1 to 6
+                </p>
+
+                <div class="form-group w-25 mx-auto">
+                    <input id="field" min="1" value="1" max="6" type="number" placeholder="Enter Here" class="form-control" />
+                </div>
+
+                <p class="text-success success-txt">
+                    Congrates, You won the game
+                </p>
+                <p class="text-danger danger-txt">
+                    OOPS !! Your Guess is Wrong...
+                </p>
+                <button class="btn btn-primary btn-sm mt-2" onclick="check_number()">
+                    Check
+                </button>
+
             </div>
-
-<button class="btn btn-primary btn-sm mt-4" onclick="check_number()">
-    Check
-</button>
-
         </div>
     </div>
- </div>
 
 
 
@@ -63,14 +66,11 @@ check
 img 
 heading: generating number -->
 
-<div class="container text-center" id="section3">
-<img 
-class="img-fluid"
-style="width:250px;"
-src="images/search.gif" alt="">
+    <div class="container text-center" id="section3">
+        <img class="img-fluid" style="width:250px;" src="images/search.gif" alt="">
 
-<h2>Generating Numbers</h2>
-</div>
+        <h2>Generating Numbers</h2>
+    </div>
 
 
 
