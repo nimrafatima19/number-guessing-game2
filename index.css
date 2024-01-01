@@ -5,6 +5,20 @@
     display: none;
 }
 
+.display-block{
+    display: block !important;
+}
+
+.success-txt{
+    display: none;
+    font-size: 14px;
+}
+.danger-txt{
+    display: none;
+    font-size: 14px;
+}
+
+
 @media screen and (max-width:400px) {
     .cotainer{
         width: 100% !important;

@@ -1,41 +1,65 @@
+const section1 = document.querySelector("#section1");
+const section2 = document.querySelector("#section2");
+const section3 = document.querySelector("#section3");
+
+const value = document.querySelector("#field");
+
+const successTxt = document.querySelector(".success-txt");
+const dangerTxt = document.querySelector(".danger-txt");
+
+
 let number;
 
-const generate_number=()=>{
-    let n1 = Math.random();
+const generate_number = () => {
 
-    let n2=n1*10;
+    const num = Math.floor(Math.random() * 6);
+    number = num;
 
-    n2 = Math.trunc(n2);
-
-    n2 = (n2 % 6) + 1;
-    number = n2;
-
-    console.log(number);
-};
-// generate_number();
-const generate_number_btn_click= () =>{
-
-document.querySelector("#section1").style.display="none";
-document.querySelector("#section2").style.display="none";
-document.querySelector("#section3").style.display="block";
-
-setTimeout(()=>{
-generate_number();
-document.querySelector("#section1").style.display="none";
-document.querySelector("#section2").style.display="block";
-document.querySelector("#section3").style.display="none";
-},3000);
 };
 
-// check number
 
-const check_number=()=>{
-    let value=document.querySelector("#field").value
-    if(value==number)
-    {
-        alert("Congrates, You won the game")
-    }else{
-        alert("OOPS !! Your Guess is Wrong...")
+const generate_number_btn_click = () => {
+
+    section3.style.display = "block";
+
+    section1.style.display = "none";
+    section2.style.display = "none";
+
+    successTxt.classList.remove("display-block");
+    dangerTxt.classList.remove("display-block");
+
+    setTimeout(() => {
+        generate_number();
+
+        section2.style.display = "block";
+
+        section1.style.display = "none";
+        section3.style.display = "none";
+    }, 3000);
+
+};
+
+
+
+const check_number = () => {
+
+    if (value.value == number) {
+        successTxt.classList.add("display-block");
+        dangerTxt.classList.remove("display-block");
+    } else {
+        dangerTxt.classList.add("display-block");
+        successTxt.classList.remove("display-block");
     }
-    generate_number_btn_click();
+
+    setTimeout(() => {
+        generate_number_btn_click();
+    }, 1500);
+
 }
+
+
+value.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+        check_number()
+    }
+})
